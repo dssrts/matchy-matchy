@@ -15,12 +15,15 @@ body{
 } */
 
 @media only screen and (max-width: 600px) {
+  body{
+    overflow-y: hidden;
+  }
   .grid {
-    transform: scale(90%);
+    position: relative;
+    left: -20px;
+    transform: scale(80%);
     width: 100%;
     grid-template-columns: repeat(2, 1fr);
-    position: relative;
-    left: -5%;
   }
   .card {
     width: 45vw;
