@@ -16,8 +16,11 @@ body{
 
 @media only screen and (max-width: 600px) {
   .grid {
+    transform: scale(90%);
     width: 100%;
     grid-template-columns: repeat(2, 1fr);
+    position: relative;
+    left: -5%;
   }
   .card {
     width: 45vw;
@@ -64,7 +67,7 @@ body {
     justify-content: center;
     max-width: 800px;
     margin: 0 auto;
-    padding: 20px;
+    padding: 0px;
     text-align: center;
     /* background-color: green; */
   }
