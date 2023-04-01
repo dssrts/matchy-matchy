@@ -7,13 +7,22 @@
     <link rel="stylesheet" href="style.css">
   </head>
   <body>
-    <audio loop autoplay>
-      <source src="farmville.mp3" type="audio/mpeg">
+    <!-- <video autoplay muted loop id="myVideo">
+      <source src="bg3.mp4" type="video/mp4">
+    </video> -->
+    
+    <audio loop autoplay id="sound">
+      <source src="farmville.mp3" type="audio/mpeg" >
       Your browser does not support the audio element.
     </audio>
+    
+
     <div class="container">
-      <h1>matchy matchy</h1>
+      
+      <h1 id="title">matchy matchy</h1>
+      <div id="timer"></div>
       <div class="grid"></div>
+      <div id="developers">Developed by Miranda, Monzon, Santos, and Sayson.</div>
         
     </div>
     <script src="script.js"></script>
