@@ -55,6 +55,7 @@ const cardArray = [
   let cardsWon = [];
   
   function createBoard() {
+    grid.classList.add("shuffle");
     for (let i = 0; i < cardArray.length; i++) {
       const card = document.createElement("div");
       card.classList.add("card");
