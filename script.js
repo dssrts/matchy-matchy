@@ -108,17 +108,25 @@ document.body.appendChild(popup);
 }
 
 function flipCard() {
+  if (cardsChosen.length >= 2) {
+    return; // Exit function if 2 cards already flipped
+  }
+
   const cardId = this.dataset.id;
-  if (cardsChosenId.includes(cardId)) return; // Prevent selecting the same card twice
+  if (cardsChosenId.includes(cardId)) {
+    return; // Prevent selecting the same card twice
+  }
+
   cardsChosen.push(cardArray[cardId].name);
   cardsChosenId.push(cardId);
   this.classList.add("flip");
   const flipSound = new Audio("pop.mp3");
   flipSound.play();
+
   if (cardsChosen.length === 2) {
-  setTimeout(checkForMatch, 500);
+    setTimeout(checkForMatch, 500);
   }
-  }
+}
   
   function checkForMatch() {
   const cards = document.querySelectorAll(".card");
