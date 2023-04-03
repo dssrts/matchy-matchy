@@ -1,52 +1,52 @@
 const cardArray = [
   {
     name: "ace",
-    imgSrc: "cards/ace.jpg"
+    imgSrc: "cards/ace.jpg",
   },
   {
     name: "queen",
-    imgSrc: "cards/queen.jpg"
+    imgSrc: "cards/queen.jpg",
   },
   {
     name: "jack",
-    imgSrc: "cards/jack.jpg"
+    imgSrc: "cards/jack.jpg",
   },
   {
     name: "king",
-    imgSrc: "cards/king.jpg"
+    imgSrc: "cards/king.jpg",
   },
   {
     name: "joker",
-    imgSrc: "cards/joker.jpg"
+    imgSrc: "cards/joker.jpg",
   },
   {
     name: "king2",
-    imgSrc: "cards/king2.jpg"
+    imgSrc: "cards/king2.jpg",
   },
   {
     name: "king",
-    imgSrc: "cards/king.jpg"
+    imgSrc: "cards/king.jpg",
   },
   {
     name: "jack",
-    imgSrc: "cards/jack.jpg"
+    imgSrc: "cards/jack.jpg",
   },
   {
     name: "queen",
-    imgSrc: "cards/queen.jpg"
+    imgSrc: "cards/queen.jpg",
   },
   {
     name: "king2",
-    imgSrc: "cards/king2.jpg"
+    imgSrc: "cards/king2.jpg",
   },
   {
     name: "ace",
-    imgSrc: "cards/ace.jpg"
+    imgSrc: "cards/ace.jpg",
   },
   {
     name: "joker",
-    imgSrc: "cards/joker.jpg"
-  }
+    imgSrc: "cards/joker.jpg",
+  },
 ];
 
 var audio = document.getElementById("sound");
@@ -59,13 +59,12 @@ let cardsWon = [];
 let timer;
 let moves = 0;
 
-
 function startTimer() {
   let seconds = 0;
   timer = setInterval(() => {
-  seconds++;
-  document.getElementById('timer').textContent = "Time: " + seconds + " s";
-}, 1000);
+    seconds++;
+    document.getElementById("timer").textContent = "Time: " + seconds + " s";
+  }, 1000);
 }
 
 function createBoard() {
@@ -85,26 +84,26 @@ function createBoard() {
     backFace.style.backgroundImage = `url(${cardArray[i].imgSrc})`; // Set background image
     card.appendChild(frontFace);
     card.appendChild(backFace);
-  grid.appendChild(card);
+    grid.appendChild(card);
   }
 }
 
 function showPopUp(message) {
-const popup = document.createElement("div");
-popup.classList.add("popup");
-const popupText = document.createElement("p");
-popupText.innerText = message;
-const movesText = document.createElement("p");
-movesText.innerText = "Moves: " + moves;
-const playAgainBtn = document.createElement("button");
-playAgainBtn.innerText = "Play Again";
-playAgainBtn.addEventListener("click", () => {
-  location.reload();
-});
-popup.appendChild(popupText);
-popup.appendChild(movesText);
-popup.appendChild(playAgainBtn);
-document.body.appendChild(popup);
+  const popup = document.createElement("div");
+  popup.classList.add("popup");
+  const popupText = document.createElement("p");
+  popupText.innerText = message;
+  const movesText = document.createElement("p");
+  movesText.innerText = "Moves: " + moves;
+  const playAgainBtn = document.createElement("button");
+  playAgainBtn.innerText = "Play Again";
+  playAgainBtn.addEventListener("click", () => {
+    location.reload();
+  });
+  popup.appendChild(popupText);
+  popup.appendChild(movesText);
+  popup.appendChild(playAgainBtn);
+  document.body.appendChild(popup);
 }
 
 function flipCard() {
@@ -127,28 +126,30 @@ function flipCard() {
     setTimeout(checkForMatch, 500);
   }
 }
-  
-  function checkForMatch() {
+
+function checkForMatch() {
   const cards = document.querySelectorAll(".card");
   const cardId1 = cardsChosenId[0];
   const cardId2 = cardsChosenId[1];
   if (cardsChosen[0] === cardsChosen[1]) {
-  cards[cardId1].classList.add("match");
-  cards[cardId2].classList.add("match");
-  cardsWon.push(cardsChosen);
+    cards[cardId1].classList.add("match");
+    cards[cardId2].classList.add("match");
+    cardsWon.push(cardsChosen);
   } else {
-  cards[cardId1].classList.remove("flip");
-  cards[cardId2].classList.remove("flip");
-  const mismatchSound = new Audio("mismatch.mp3");
-  mismatchSound.play();
+    cards[cardId1].classList.remove("flip");
+    cards[cardId2].classList.remove("flip");
+    const mismatchSound = new Audio("mismatch.mp3");
+    mismatchSound.play();
   }
   cardsChosen = [];
   cardsChosenId = [];
   moves++;
   if (cardsWon.length === cardArray.length / 2) {
+    const winSound = new Audio("win.mp3");
+    winSound.play();
     clearInterval(timer);
     showPopUp("Congratulations! You've matched all the cards!");
   }
-  }
-  
-  createBoard();
+}
+
+createBoard();
