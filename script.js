@@ -1,3 +1,9 @@
+window.addEventListener("DOMContentLoaded", (event) => {
+  const audio = document.querySelector("audio");
+  audio.volume = 0.2;
+  audio.muted = false;
+});
+
 const cardArray = [
   {
     name: "ace",
@@ -120,6 +126,7 @@ function flipCard() {
   cardsChosenId.push(cardId);
   this.classList.add("flip");
   const flipSound = new Audio("pop.mp3");
+  flipSound.volume = 0.3;
   flipSound.play();
 
   if (cardsChosen.length === 2) {
@@ -139,6 +146,7 @@ function checkForMatch() {
     cards[cardId1].classList.remove("flip");
     cards[cardId2].classList.remove("flip");
     const mismatchSound = new Audio("mismatch.mp3");
+    mismatchSound.volume = 0.3;
     mismatchSound.play();
   }
   cardsChosen = [];

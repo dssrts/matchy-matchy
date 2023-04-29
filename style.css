@@ -2,10 +2,12 @@
   font-family: "mf_end_of_the_dreamregular";
   color: rgb(231, 170, 2);
 }
+
 body {
   background-image: url(skyy.gif);
   background-size: cover;
 }
+
 @font-face {
   font-family: "mf_end_of_the_dreamregular";
   src: url("mfendofthedream-bomn-webfont.woff2") format("woff2"),
@@ -13,6 +15,7 @@ body {
   font-weight: normal;
   font-style: normal;
 }
+
 :root {
   --color: rgb(124, 4, 168);
 }
@@ -82,6 +85,7 @@ body {
   text-align: center;
   /* background-color: green; */
 }
+
 #developers {
   margin: auto;
   color: rgb(101, 4, 150);
@@ -121,6 +125,7 @@ h1 {
   margin-bottom: 10px;
   font-family: cooper;
 }
+
 .popup p {
   font-family: monospace;
 }
@@ -213,9 +218,11 @@ h1 {
   0% {
     transform: rotateY(0deg);
   }
+
   50% {
     transform: rotateY(180deg);
   }
+
   100% {
     transform: rotateY(0deg);
   }
@@ -237,9 +244,11 @@ h1 {
   0% {
     transform: translateY(0px);
   }
+
   50% {
     transform: translateY(-20px);
   }
+
   100% {
     transform: translateY(0px);
   }
