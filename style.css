@@ -1,38 +1,50 @@
-*{
-  font-family: georgia;
+* {
+  font-family: "mf_end_of_the_dreamregular";
   color: rgb(231, 170, 2);
 }
-body{
-  background-image: url(stars.jpg);
+
+body {
+  background-image: url(skyy.gif);
+  background-size: cover;
 }
-/* @font-face {
-    font-family: 'thecircousregular';
-    src: url('font/thecircous-webfont.woff2') format('woff2'),
-         url('/fontthecircous-webfont.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
 
-} */
+@font-face {
+  font-family: "mf_end_of_the_dreamregular";
+  src: url("mfendofthedream-bomn-webfont.woff2") format("woff2"),
+    url("mfendofthedream-bomn-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
 
-@media only screen and (max-width: 600px) {
-  body{
+:root {
+  --color: rgb(124, 4, 168);
+}
+
+/* @media only screen and (max-width: 600px) {
+  body {
     overflow-y: hidden;
   }
   .grid {
     position: relative;
-    left: -20px;
-    transform: scale(80%);
+    left: -5px;
+    transform: scale(60%);
     width: 100%;
     grid-template-columns: repeat(2, 1fr);
   }
   .card {
-    width: 45vw;
-    height: 60vw;
+    width: 10vw;
+    height: 20vw;
   }
-}
+  .container {
+    margin: auto;
+  }
+} */
 
 /* Medium screens (tablets) */
-@media only screen and (min-width: 601px) and (max-width: 960px) {
+/* @media only screen and (min-width: 601px) and (max-width: 960px) {
+  .body {
+    scroll-margin-inline-start: 100em;
+  }
   .grid {
     width: 80%;
     grid-template-columns: repeat(3, 1fr);
@@ -41,10 +53,10 @@ body{
     width: 25vw;
     height: 35vw;
   }
-}
+} */
 
 /* Large screens (desktops) */
-@media only screen and (min-width: 961px) {
+/* @media only screen and (min-width: 961px) {
   .grid {
     width: 60%;
     grid-template-columns: repeat(4, 1fr);
@@ -53,150 +65,206 @@ body{
     width: 15vw;
     height: 25vw;
   }
-} 
-
+} */
 
 body {
-    background-color: #f2f2f2;
-    margin: 0;
-    padding: 0;
-    font-family: cooper;
-  }
-  
-  .container {
-    display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
-    justify-content: center;
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 0px;
-    text-align: center;
-    /* background-color: green; */
-  }
-  
-  h1 {
-    font-size: 36px;
-    margin-top: 0;
-  }
-  
-  .popup {
-    border-radius: 1em;
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 300px;
-    padding: 20px;
-    background-color: white;
-    border: 2px solid black;
-    text-align: center;
-    z-index: 999;
-    font-family: cooper;
-    
-  }
-  
-  /* Style for the "you win" message */
-  .popup h2 {
-    font-size: 24px;
-    margin-bottom: 10px;
-    font-family: cooper;
-  }
-  .popup p{
-    font-family: monospace;
-  }
-  
-  /* Style for the play again button */
-  .popup button {
-    background-color: rgb(208, 151, 219);
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    border-radius: 5px;
-    margin-top: 10px;
-    cursor: pointer;
-    font-family: monospace;
-  }
-  
-  .popup button:hover {
-    background-color: white;
-    color: black;
-  }
-  
-  /* Hide the popup by default */
-  .popup.hide {
-    display: none;
+  background-color: #f2f2f2;
+  margin: 0;
+  padding: 0;
+  font-family: cooper;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: center;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 0px;
+  text-align: center;
+  /* background-color: green; */
+}
+
+#developers {
+  margin: auto;
+  color: rgb(101, 4, 150);
+  font-family: monospace;
+  font-weight: bold;
+  background-color: white;
+  width: 300px;
+  text-align: center;
+  border-radius: 2em;
+}
+
+h1 {
+  padding-top: 50px;
+  font-size: 36px;
+  margin-top: 0;
+  color: rgb(255, 255, 255);
+}
+
+.popup {
+  border-radius: 1em;
+  position: fixed;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 300px;
+  padding: 20px;
+  background-color: white;
+  border: 2px solid rgb(130, 130, 130);
+  text-align: center;
+  z-index: 999;
+  font-family: cooper;
+}
+
+/* Style for the "you win" message */
+.popup h2 {
+  font-size: 24px;
+  margin-bottom: 10px;
+  font-family: cooper;
+}
+
+.popup p {
+  font-family: monospace;
+}
+
+/* Style for the play again button */
+.popup button {
+  background-color: rgb(208, 151, 219);
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  margin-top: 10px;
+  cursor: pointer;
+  font-family: monospace;
+}
+
+.popup button:hover {
+  background-color: rgb(255, 184, 231);
+  color: rgb(103, 63, 134);
+}
+
+/* Hide the popup by default */
+.popup.hide {
+  display: none;
+}
+
+.grid {
+  padding: 20px;
+  margin: auto;
+  justify-content: space-between;
+  background-color: white;
+  border-radius: 1em;
+  display: grid;
+  grid-template-columns: repeat(4, 70px);
+  grid-gap: 5px;
+  margin-bottom: 10px;
+}
+
+.card {
+  border-radius: 3px;
+  position: relative;
+  width: 70px;
+  height: 100px;
+  margin-bottom: 10px;
+  transform-style: preserve-3d;
+  transition: transform 0.5s ease;
+  box-shadow: 3px 3px 0px gray;
+}
+
+.card.flip {
+  transform: rotateY(180deg);
+}
+
+.front-face,
+.back-face {
+  border-radius: 5px;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+}
+
+.front-face {
+  background-image: url(cards/back.jpg);
+  background-size: contain;
+  background-position: 3px;
+  /* background-position: 110px; */
+  background-color: #ccc;
+  z-index: 2;
+}
+
+.back-face {
+  background-size: cover;
+  background-repeat: no-repeat;
+  transform: rotateY(180deg);
+  z-index: 1;
+}
+
+.front-face:hover {
+  transform: scale(105%);
+  transition: transform 0.5s ease;
+}
+
+.shuffle .card {
+  animation: shuffle 1s ease-in-out;
+  animation-delay: 0.5s;
+}
+
+@keyframes shuffle {
+  0% {
+    transform: rotateY(0deg);
   }
 
-
-  .grid {
-    margin: auto;
-    justify-content: space-between;
-    /* background-color: blue; */
-    display: grid;
-    grid-template-columns: repeat(4, 100px);
-    grid-gap: 5px;
-  }
-  
-  .card {
-    border-radius: 3px;
-    position: relative;
-    width: 100px;
-    height: 140px;
-    margin-bottom: 10px;
-    transform-style: preserve-3d;
-    transition: transform 0.5s ease;
-    box-shadow: 3px 3px 0px gray;
-  }
-  
-  .card.flip {
+  50% {
     transform: rotateY(180deg);
   }
-  
-  .front-face,
-  .back-face {
-    border-radius: 5px;
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    backface-visibility: hidden;
+
+  100% {
+    transform: rotateY(0deg);
   }
-  
-  .front-face {
-    background-image: url(cards/back.jpg);
-    background-size: contain;
-    background-position: 3px;
-    /* background-position: 110px; */
-    background-color: #ccc;
-    z-index: 2;
-  }
-  
-  .back-face {
-    background-size: cover;
-    background-repeat: no-repeat;
-    transform: rotateY(180deg);
-    z-index: 1;
+}
+
+#myVideo {
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover;
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  z-index: -1;
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0px);
   }
 
-  .front-face:hover{
-    transform: scale(105%);
-    transition: transform 0.5s ease;
+  50% {
+    transform: translateY(-20px);
   }
 
-  .shuffle .card {
-    animation: shuffle 1s ease-in-out;
-    animation-delay: 0.5s;
+  100% {
+    transform: translateY(0px);
   }
-  
-  @keyframes shuffle {
-    0% {
-      transform: rotateY(0deg);
-    }
-    50% {
-      transform: rotateY(180deg);
-    }
-    100% {
-      transform: rotateY(0deg);
-    }
-  }
-  
+}
+
+#title {
+  animation: float 3s ease-in-out infinite;
+}
+
+#timer {
+  padding-top: 8px;
+  border-top-right-radius: 6px;
+  border-top-left-radius: 6px;
+  margin: auto;
+  width: 200px;
+  color: rgb(171, 9, 176);
+  font-size: 20px;
+  background-color: white;
+}
