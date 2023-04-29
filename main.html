@@ -11,19 +11,35 @@
       <source src="bg3.mp4" type="video/mp4">
     </video> -->
 
-    <audio loop autoplay id="sound">
+    <audio autoplay loop id="sound">
       <source src="farmville.mp3" type="audio/mpeg" />
       Your browser does not support the audio element.
     </audio>
 
     <div class="container">
       <h1 id="title">matchy matchy</h1>
+      <!--sound button-->
+      <button style="all: unset" id="button" onclick="audio_controls()">
+        <i
+          class="fa-solid fa-volume-high"
+          style="color: var(--color); display: block"
+          id="sound-icon"
+        ></i>
+        <i
+          class="fa-solid fa-volume-xmark"
+          style="color: var(--color); display: none"
+          id="sound-icon2"
+        ></i>
+      </button>
+
       <div id="timer"></div>
       <div class="grid"></div>
-      <div id="developers">
-        Developed by Miranda, Monzon, <br>Santos, and Sayson.
-      </div>
+      <div id="developers">Developed by Miranda.</div>
     </div>
-    <script src="script.js"></script>
+    <script defer src="script.js"></script>
+    <script
+      src="https://kit.fontawesome.com/8712b6c6f3.js"
+      crossorigin="anonymous"
+    ></script>
   </body>
 </html>

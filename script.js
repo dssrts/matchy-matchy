@@ -144,11 +144,29 @@ function checkForMatch() {
   cardsChosen = [];
   cardsChosenId = [];
   moves++;
+  const winSound = new Audio("win.mp3");
+  winSound.volume = 0.3;
   if (cardsWon.length === cardArray.length / 2) {
-    const winSound = new Audio("win.mp3");
+    audio.pause();
     winSound.play();
     clearInterval(timer);
     showPopUp("Congratulations! You've matched all the cards!");
+  }
+}
+
+var soundIcon = document.getElementById("sound-icon");
+var soundIcon2 = document.getElementById("sound-icon2");
+var button = document.getElementById("button");
+
+function audio_controls() {
+  if (audio.paused) {
+    audio.play();
+    soundIcon.style.display = "block";
+    soundIcon2.style.display = "none";
+  } else {
+    audio.pause();
+    soundIcon.style.display = "none";
+    soundIcon2.style.display = "block";
   }
 }
 
